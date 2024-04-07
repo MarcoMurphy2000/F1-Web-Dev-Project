@@ -1,0 +1,20 @@
+<ng-container *ngIf="podium.length > 0">
+  <h1>Results: {{f1Service.Year}} - {{f1Service.RoundName}}</h1>
+  <div class="container podium">
+    <div class="podium__item" *ngIf="podium.length >= 2">
+      <p class="podium__city">{{ podium[1].permanentNumber }}. {{ podium[1].givenName }}</p>
+      <div class="podium__rank second">2</div>
+    </div>
+
+    <div class="podium__item">
+      <p class="podium__city">{{ podium[0].permanentNumber }}. {{ podium[0].givenName }}</p>
+      <div class="podium__rank first">1</div>
+    </div>
+
+    <div class="podium__item" *ngIf="podium.length >= 3">
+      <p class="podium__city">{{ podium[2].permanentNumber }}. {{ podium[2].givenName }}</p>
+      <div class="podium__rank third">3</div>
+    </div>
+  </div>
+</ng-container>
+

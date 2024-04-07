@@ -1,0 +1,24 @@
+.outer-layer{
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-areas: 'drop-down tables winner';
+}
+
+.center{
+  grid-area: tables;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  grid-area: drop-down;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  grid-area: winner;
+  margin: 10px;
+}

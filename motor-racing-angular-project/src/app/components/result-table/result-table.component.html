@@ -1,0 +1,34 @@
+@if(results$ | async; as result) {
+  <div class="table">
+    <table mat-table [dataSource]="result" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> Position </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.givenName}} {{element.familyName}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nationality">
+        <th mat-header-cell *matHeaderCellDef> Nationality </th>
+        <td mat-cell *matCellDef="let element"> <img src="https://flagsapi.com/{{element.nationality}}/flat/64.png"> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef> Points </th>
+        <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+}

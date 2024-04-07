@@ -1,0 +1,11 @@
+<p>Select Season:</p>
+<mat-form-field>
+  <mat-label>Seasons:</mat-label>
+  <mat-select (valueChange)="changeValue($event)">
+    @for (season of seasons; track season) {
+      <mat-option [value]="season">{{season}}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+
